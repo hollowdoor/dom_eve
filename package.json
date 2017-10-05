@@ -2,9 +2,13 @@
   "name": "dom-eve",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "directories": {
     "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ebam"
   },
   "ebam": {
     "entry": "src/index.js",
@@ -16,10 +20,6 @@
       "dangerousTaggedTemplateString": true
     }
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ebam"
-  },
   "keywords": [
     "DOM",
     "event",
@@ -27,7 +27,6 @@
   ],
   "author": "Quentin Engles <hollowdoor99@gmail.com> (https://hollowdoor.github.io/)",
   "license": "MIT",
-  "dependencies": {
-    "object-assign": "^4.1.1"
-  }
+  "jsnext:main": "dist/bundle.es.js",
+  "module": "dist/bundle.es.js"
 }

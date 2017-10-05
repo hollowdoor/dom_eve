@@ -1,4 +1,4 @@
-(function () {
+var domEve = (function () {
 'use strict';
 
 /*
@@ -138,7 +138,7 @@ var eventsProto = objectAssign(Object.create(null), {
 });
 
 function events(element, tracker){
-    if ( tracker === void 0 ) { tracker = null; }
+    if ( tracker === void 0 ) tracker = null;
 
     var eve = Object.create(eventsProto);
     eve._records = Object.create(null);
@@ -166,15 +166,7 @@ events.track = function track(){
     };
 };
 
-var tracker = events.track();
-
-events('#clickme', tracker).on('click', function (event){
-    console.log('click!');
-});
-
-events('#remove').on('click', function (event){
-    tracker.clear();
-});
+return events;
 
 }());
-//# sourceMappingURL=code.js.map
+//# sourceMappingURL=dom-eve.js.map

@@ -43,8 +43,12 @@ const eventsProto = objectAssign(Object.create(null), {
 
 export default function events(element, tracker = null){
     const eve = Object.create(eventsProto);
-    eve.element = element;
     eve._records = Object.create(null);
+    if(typeof element === 'string'){
+        eve.element = document.querySelector(element);
+    }else{
+        eve.element = element;
+    }    
 
     if(tracker){
         tracker.list.push(eve);

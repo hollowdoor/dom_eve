@@ -1,5 +1,10 @@
 import events from '../';
+let tracker = events.track();
 
-events(document.body).on('click', event=>{
+events('#clickme', tracker).on('click', event=>{
     console.log('click!');
+});
+
+events('#remove').on('click', event=>{
+    tracker.clear();
 });
