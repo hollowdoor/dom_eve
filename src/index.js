@@ -1,4 +1,6 @@
-const eventsProto = Object.assign(Object.create(null), {
+import objectAssign from 'object-assign';
+
+const eventsProto = objectAssign(Object.create(null), {
     on(name, cb, options){
         this.element.addEventListener(name, cb, options);
         this._records[name] = this._records[name] || [];
